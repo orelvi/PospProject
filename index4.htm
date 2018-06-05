@@ -1,0 +1,101 @@
+<html>
+<head>
+
+</head>
+
+<script>
+
+var colorH1= "yellow";
+var storage = window.localStorage;
+var listaEstudiante = [];
+
+window.onload = function(){
+if (typeof(storage) !== "undefined") {
+   listaEstudiante = storage.getItem("Estudiantes");
+   // if (typeof color!=='undefined')
+    //{
+    //    cambiarColor(color);
+   // }
+   
+         //consol.log("Storage soportado");
+    //else
+   // {
+   //     storage.setItem("color_h1",colorH1);
+  //  }
+} else {
+    consol.log("Storage no soportado");
+}
+}
+//function cambiarColor(color){
+//var element = document.getElementById("etiqueta_h1");
+//element.style.color=color;
+
+//}
+
+
+
+function agregarEstudiante() {
+
+   var sNombre= document.getElementById("nombre").value,
+        sMatricula=document.getElementById("matricula").value,
+        sId=document.getElementById("id").value   
+    
+    var newEstudiante =  {
+
+        nombre:sNombre,
+        matricula:sMatricula,
+        id:sId
+    }
+    
+    
+    listaEstudiante.push(newEstudiante);
+    storage.setItem("Estudiantes",JSON.stringify(listaEstudiante));
+    //console.log(listaEstudiante);
+
+}
+
+
+
+
+</script>
+
+<body>
+    <h1 id="frmEstudiantes" style="color:green;background: rgb(43, 43, 44)">Formulario de Estudiantes</h1>
+    <form action="">Nombre:<br>
+        <input type="text" id="nombre">
+        <br>
+        Matricula:<br>
+        <input type="text" id="matricula">
+        <br>
+        Identicacion:<br>
+        <input type="text" id="id">
+        <br>
+        <br>
+        
+    
+        <button onclick="agregarEstudiante()">Guardar</button>
+        
+        <div class="container">
+             <table class="table table-hover" id="TablaDatos">
+                 <thead>
+                 <tr>
+                    <th>Nombre</th>
+                      <th>Matricula</th>
+                      <th>Identicacion</th>
+                     <th>X</th>
+                 </tr>
+                </thead >
+                <tbody id="detalleEstudiante">
+
+                </tbody>
+
+        </table>
+
+    </div>
+
+    </form>
+    
+    
+</body>
+
+</html>

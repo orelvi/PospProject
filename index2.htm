@@ -1,0 +1,27 @@
+<html>
+<head>
+
+</head>
+
+<script>
+function cambiarColor(){
+var element = document.getElementById("etiqueta_h1");
+var element2= document.getElementById("color_h1")
+
+element.style.color=element2.value;
+
+}
+
+</script>
+
+<body>
+    <h1 id="etiqueta_h1" style="color:green;background: blue">   Titulo Principal h1</h1>
+    <label >Color H1</label>
+
+    <input type="text" id="color_h1">
+
+    <button onclick="cambiarColor()">Cambiar Color</button>
+    
+</body>
+
+</html>
