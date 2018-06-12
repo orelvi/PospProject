@@ -8,10 +8,22 @@ function limpiarFormulario(inputs){
 }
 
 var estudiantes=[];
+var storage = window.localStorage;
+ 
+ window.onload = function(){
+    if (typeof(storage) !== "undefined") {
+        var localEestudiantes = JSON.parse(storage.getItem("Estudiantes"));
+       agregarEstudiante(localEestudiantes);
+
+    } else {
+        consol.log("Storage no soportado");
+    }
+    }  
+
 
 function agregarEstudiante(estudiante){
 
-        estudiantes.push(estudiante);
+    
 
         var tablaEstudiante= document.getElementById("tabla_estudiante")
         var tdNombre = document.createElement("td");
@@ -29,6 +41,8 @@ function agregarEstudiante(estudiante){
 
         tablaEstudiante.appendChild(tr);
 
+        //guardaEstudiante(estudiante);
+
 
 }
 
@@ -44,8 +58,18 @@ function leerEstudiante(){
     est.identificacion=identificacion;
 
     limpiarFormulario(["nombre","matricula","identificacion"]);
-
+    estudiantes.push(est);
     console.log(est);
     agregarEstudiante(est);
+    guardaEstudiante(est);
+   
+
 }
 
+function guardaEstudiante(){
+    
+    
+    storage.setItem("Estudiantes",JSON.stringify(estudiantes));
+    
+    
+}

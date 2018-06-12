@@ -1,6 +1,6 @@
 
 var Estudiante = function(){
     this.nombre="";
-    this.matriculua="";
+    this.matricula="";
     this.identificacion="";
 }
