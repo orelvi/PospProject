@@ -39,7 +39,7 @@ function agregarEstudiante(est) {
 }
 
 function buscarEstudiantePorMatricula(matricula) {
-    var estudiante=null;
+    var estudiante = null;
 
     estudiantes.forEach(function (v, i) {
         if (v.matricula === matricula) {
@@ -57,7 +57,7 @@ function editarEstudiante(btnEditar) {
 
     var estudiante = buscarEstudiantePorMatricula(matricula);
 
-   
+
     //console.log(estudiante);
     if (estudiante == null) {
         console.log("No encontrado");

@@ -1,0 +1,53 @@
+hectorvent
+https://github.com/hectorvent/nocode
+
+BASE-URL: http://192.168.200.63:8080
+
+API Register:
+
+	{{direccion}}/register
+	POST /register
+	*Campos
+	-name
+	-email
+	-password
+
+POST /Login
+	*Campos
+	-email
+	-password
+
+GET /user
+
+GET	/user/{id}
+
+
+POST /post
+	*Campos
+	-title
+	-body
+
+POST	/get
+
+POST	/get/{id}
+
+
+POST /post/{id_post}/comment
+	*Campos	
+	-body
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
